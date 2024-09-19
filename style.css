@@ -29,12 +29,19 @@ header{
     display: flex;
     justify-content: space-around;
 }
+#btnto{
+    display: flex;
+    justify-content: space-between;
+}
 #secendDiv{
     display: flex;
     flex-direction: column;
     margin-left: 450px;
     margin-right: 450px;
     justify-content: center;
+}
+#forTable{
+    overflow: scroll
 }
 
 #searchFrom{
@@ -60,9 +67,11 @@ margin-right: 50px;
     color: white;
 }
 #dataTable{
+
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 15px;
+    overflow: scroll;
 }
 .allCards{
     background-color:#F0F0F0;
