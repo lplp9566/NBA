@@ -64,12 +64,14 @@ function playertoTable(Players) {
         const fg = document.createElement("td");
         const threePercent = document.createElement("td");
         const action = document.createElement("td");
+        action.classList.add("action");
         player.textContent = Current.playerName;
         position.textContent = Current.position;
         points.textContent = Current.points.toString();
         fg.textContent = Current.twoPercent.toString();
         threePercent.textContent = Current.threePercent.toString();
         const AddBtn = document.createElement("button");
+        AddBtn.classList.add("addBtn");
         AddBtn.textContent = `add ${Current.playerName} to Current Team`;
         AddBtn.addEventListener("click", () => {
             addToCard(Current);
@@ -86,6 +88,7 @@ function playertoTable(Players) {
 }
 function addToCard(player) {
     const divtoadd = document.createElement("div");
+    divtoadd.classList.add("divtoadd");
     const playerName = document.createElement("p");
     playerName.innerText = player.playerName;
     playerName.classList.add("fullName");

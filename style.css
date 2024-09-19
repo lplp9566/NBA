@@ -4,6 +4,14 @@ body{
 .tableRow{
     border: solid 2px;
 }
+.fullName{
+    margin-top: 0px;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    color: darkblue;
+}
 
 header{
     display: flex;
@@ -63,8 +71,21 @@ margin-right: 50px;
     align-items: center;
     justify-content: center;
     justify-items: center;
-    height: 200px;
+    height: 250px;
     width: 200px;
+}
+.addBtn{
+    background-color: darkblue;
+    color: white;
+    margin: 10px 5px 10px 5px;
+    border-radius: 4%;
+    
+}
+.divtoadd{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #secendDiv{
     background-color:#F0F0F0;
@@ -74,4 +95,18 @@ margin-right: 50px;
 }
 th{
     background-color: red;
+    height: 50px;
+}
+table,td{
+    border: solid 0.5px;
+    border-collapse: collapse ;
+    height: 50px;
+    justify-items: center;
+    align-items: center;
+    margin-left: 5px;
+ 
+
+}
+.action{
+    max-width: 100px;
 }

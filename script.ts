@@ -18,10 +18,7 @@ interface Players {
       twoPercent: number
       threePercent: number
       points: number
-
-
 }
-
 const searchPlayerBtn = document.getElementById("submitBtn") as HTMLButtonElement
 
 searchFrom.addEventListener("submit",(e:Event)=>{
@@ -40,21 +37,15 @@ searchFrom.addEventListener("submit",(e:Event)=>{
                 points: points.value,
                 twoPercent: fieldGoal.value,
                 threePercent: point3.value,
-               
-
             })
         });
         if(!response.ok){
             throw new Error("NetworkError")
-    
         }
         const thePlayer:Players[] = await response.json()
         playertoTable(thePlayer)
         console.log(thePlayer)
-
-      
     }catch(error){
-    
         console.log(error)
     }
     
@@ -70,20 +61,19 @@ function playertoTable (Players:Players[]){
         const fg = document.createElement("td")
         const threePercent = document.createElement("td")
         const action = document.createElement("td")
+        action.classList.add("action")
 
-        
-        
         player.textContent = Current.playerName
         position.textContent = Current.position
         points.textContent = Current.points.toString()
         fg.textContent = Current.twoPercent.toString()
         threePercent.textContent = Current.threePercent.toString()
         const AddBtn = document.createElement("button")
+        AddBtn.classList.add("addBtn")
      AddBtn.textContent = `add ${Current.playerName} to Current Team`
      AddBtn.addEventListener("click",()=>{
         addToCard(Current)
      })
-
         action.appendChild(AddBtn)
         tableRow.appendChild(player)
         tableRow.appendChild(position)
@@ -92,15 +82,12 @@ function playertoTable (Players:Players[]){
         tableRow.appendChild(threePercent)
         tableRow.appendChild(action)
         table?.appendChild(tableRow)
-       
-
-
-
     })
 }
 
 function addToCard(player:Players){
      const divtoadd = document.createElement("div")
+     divtoadd.classList.add("divtoadd")
             const playerName = document.createElement("p")
             playerName.innerText = player.playerName 
             playerName.classList.add("fullName")

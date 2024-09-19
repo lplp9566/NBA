@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>NBA FANTASY 2014-2024</header>
-    <h1 id="titleHeder">My Fantasy Team</h1>
+    <h2 id="titleHeder">My Fantasy Team</h2>
     <div id="allposition">
       <div id="pointDiv" class="allCards">
         <p class="titleFrom">Point Guard</p>
@@ -42,9 +42,12 @@
           <option class="option" value="PF">PF</option>
           <option class="option" value="C">C</option>
         </select>
-        <input type="range" id="points" min="0" max="20000" />
-        <input type="range" value="" id="fg" min="0" max="100" />
-        <input type="range" value="" id="3p" min="0" max="100" />
+    
+             <!-- <label for="range">1000</label> -->
+            <input type="range" id="points" min="0" max="20000"  value="0"/>
+       
+        <input type="range" value="0" id="fg" min="0" max="100"  />
+        <input type="range" value="0" id="3p" min="0" max="100" />
         <button id="submitBtn" type="submit">Search Player</button>
       </form>
       <table id="dataTable">
