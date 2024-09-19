@@ -54,32 +54,73 @@ function searchPlayer() {
     });
 }
 function playertoTable(Players) {
+    table.innerText = "";
     Players.forEach((Current, index) => {
         const tableRow = document.createElement("tr");
+        tableRow.classList.add("tableRow");
         const player = document.createElement("td");
+        const position = document.createElement("td");
         const points = document.createElement("td");
         const fg = document.createElement("td");
         const threePercent = document.createElement("td");
         const action = document.createElement("td");
+        player.textContent = Current.playerName;
+        position.textContent = Current.position;
+        points.textContent = Current.points.toString();
+        fg.textContent = Current.twoPercent.toString();
+        threePercent.textContent = Current.threePercent.toString();
         const AddBtn = document.createElement("button");
         AddBtn.textContent = `add ${Current.playerName} to Current Team`;
+        AddBtn.addEventListener("click", () => {
+            addToCard(Current);
+        });
         action.appendChild(AddBtn);
+        tableRow.appendChild(player);
+        tableRow.appendChild(position);
+        tableRow.appendChild(points);
+        tableRow.appendChild(fg);
+        tableRow.appendChild(threePercent);
         tableRow.appendChild(action);
         table === null || table === void 0 ? void 0 : table.appendChild(tableRow);
     });
 }
-// fetch(BASEURL, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       position: "PG",
-//       twoPercent: 10,
-//       threePercent: 0,
-//       points: 20,
-//     })
-//   })
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//   .catch(error => console.error('Error:', error));
+function addToCard(player) {
+    const divtoadd = document.createElement("div");
+    const playerName = document.createElement("p");
+    playerName.innerText = player.playerName;
+    playerName.classList.add("fullName");
+    const threePercent = document.createElement("p");
+    threePercent.innerText = `threePercent:${player.threePercent.toString()}%`;
+    const twoPercent = document.createElement("p");
+    twoPercent.innerText = `twoPercent:${player.twoPercent.toString()}% `;
+    const points = document.createElement("p");
+    points.innerText = `points:${player.points.toString()}`;
+    divtoadd.appendChild(playerName);
+    divtoadd.appendChild(threePercent);
+    divtoadd.appendChild(twoPercent);
+    divtoadd.appendChild(points);
+    switch (player.position) {
+        case "PG":
+            pointGuardDiv.innerText = "";
+            pointGuardDiv.appendChild(divtoadd);
+            break;
+        case "SG":
+            ShootingGuardDiv.innerText = "";
+            ShootingGuardDiv.appendChild(divtoadd);
+            break;
+        case "SF":
+            SmallForwardDiv.innerText = "";
+            SmallForwardDiv.appendChild(divtoadd);
+            break;
+        case "PF":
+            PowerForwardDiv.innerText = "";
+            PowerForwardDiv.appendChild(divtoadd);
+            break;
+        case "C":
+            CenterDiv.innerText = "";
+            CenterDiv.appendChild(divtoadd);
+            break;
+        default:
+            break;
+    }
+}

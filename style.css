@@ -1,9 +1,17 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tableRow{
+    border: solid 2px;
+}
+
 header{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: darkblue;
     color: white;
+    height: 50px;
 }
 #titleHeder{
     display: flex;
@@ -24,14 +32,46 @@ header{
 #searchFrom{
     display: flex;
 flex-direction: column;
+margin-top: 40px;
+margin-left: 50px;
+margin-right: 50px;
+}
+.titleFrom{
+    color: blue;
+    display: flex;
+    justify-content: center;
 }
 
 #submitBtn{
-    margin-right: 130px;
-    margin-left: 130px;
+    margin-right: 200px;
+    margin-left: 200px;
+    background-color: darkblue;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+#dataTable{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
 .allCards{
-    background-color: gray;
+    background-color:#F0F0F0;
+    border-radius: 10px;
+    box-shadow: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
     height: 200px;
     width: 200px;
+}
+#secendDiv{
+    background-color:#F0F0F0;
+    border-radius: 10px;
+    box-shadow: 10%;
+    
+}
+th{
+    background-color: red;
 }

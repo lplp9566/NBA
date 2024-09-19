@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NBA</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <header>NBA FANTASY 2014-2024</header>
     <h1 id="titleHeder">My Fantasy Team</h1>
     <div id="allposition">
-        <div id="point" class="allCards">
-            <p>Point Guard</p>
-        </div>
-        <div id="shooting" class="allCards"> 
-            <p>Shooting Guard</p>
-        </div>
-        <div id="small" class="allCards">
-            <p>Small Forward</p>
-        </div>
-        <div id="power" class="allCards"><p>
-            Power Forward
-        </p></div>
-        <div id="center" class="allCards">
-            <p>Center</p>
-        </div>
+      <div id="pointDiv" class="allCards">
+        <p class="titleFrom">Point Guard</p>
+        <div id="point"></div>
+      </div>
+
+      <div id="shootingDiv" class="allCards">
+        <p class="titleFrom">Shooting Guard</p>
+        <div id="shooting"></div>
+      </div>
+      <div id="smallDiv" class="allCards">
+        <p class="titleFrom">Small Forward</p>
+        <div id="small"></div>
+      </div>
+      <div id="powerDiv" class="allCards">
+        <p class="titleFrom">Power Forward</p>
+        <div id="power"></div>
+      </div>
+      <div id="centerDiv" class="allCards">
+        <p class="titleFrom">Center</p>
+        <div id="center"></div>
+      </div>
     </div>
     <h2>NBA Player Search</h2>
     <div id="secendDiv">
-    <form id="searchFrom">
+      <form id="searchFrom">
         <select id="selectOption">
-            <option  class="option" value="PG">PG</option>
-            <option  class="option" value="SG">SG</option>
-            <option  class="option" value="SF">SF</option>
-            <option  class="option" value="PF">PF</option>
-            <option  class="option" value="C">C</option>
+          <option class="option" value="PG">PG</option>
+          <option class="option" value="SG">SG</option>
+          <option class="option" value="SF">SF</option>
+          <option class="option" value="PF">PF</option>
+          <option class="option" value="C">C</option>
         </select>
         <input type="range" id="points" min="0" max="20000" />
         <input type="range" value="" id="fg" min="0" max="100" />
         <input type="range" value="" id="3p" min="0" max="100" />
-        <button id="submitBtn" type="submit"> Search Player</button>
-    </form>
-    <table id="dataTable">
+        <button id="submitBtn" type="submit">Search Player</button>
+      </form>
+      <table id="dataTable">
         <thead>
-            <tr>
-                <th>player</th>
-                <th>position</th>
-                <th>points</th>
-                <th>fg%</th>
-                <th>3p%</th>
-                <th>action</th>
-            </tr>
+          <tr>
+            <th>player</th>
+            <th>position</th>
+            <th>points</th>
+            <th>fg%</th>
+            <th>3p%</th>
+            <th>action</th>
+          </tr>
         </thead>
-        <tbody id="tbody">
-
-        </tbody>
-    </table>
-</div>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
     <script src="../NBA/javaScript/script.js"></script>
-</body>
+  </body>
 </html>
