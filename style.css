@@ -1,0 +1,37 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkblue;
+    color: white;
+}
+#titleHeder{
+    display: flex;
+    justify-content: center;
+}
+#allposition{
+    display: flex;
+    justify-content: space-around;
+}
+#secendDiv{
+    display: flex;
+    flex-direction: column;
+    margin-left: 450px;
+    margin-right: 450px;
+    justify-content: center;
+}
+
+#searchFrom{
+    display: flex;
+flex-direction: column;
+}
+
+#submitBtn{
+    margin-right: 130px;
+    margin-left: 130px;
+}
+.allCards{
+    background-color: gray;
+    height: 200px;
+    width: 200px;
+}

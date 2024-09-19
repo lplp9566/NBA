@@ -1,0 +1,85 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const allPosition = document.getElementById("allposition");
+const pointGuardDiv = document.getElementById("point");
+const ShootingGuardDiv = document.getElementById("shooting");
+const SmallForwardDiv = document.getElementById("small");
+const PowerForwardDiv = document.getElementById("power");
+const CenterDiv = document.getElementById("center");
+const BASEURL = 'https://nbaserver-q21u.onrender.com/api/filter';
+const searchFrom = document.getElementById("searchFrom");
+const selectOptiond = document.getElementById("selectOption");
+const points = document.getElementById("points");
+const fieldGoal = document.getElementById("fg");
+const point3 = document.getElementById("3p");
+const table = document.getElementById("tbody");
+const searchPlayerBtn = document.getElementById("submitBtn");
+searchFrom.addEventListener("submit", (e) => {
+    e.preventDefault();
+    searchPlayer();
+});
+function searchPlayer() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch(BASEURL, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    position: selectOptiond.value,
+                    points: points.value,
+                    twoPercent: fieldGoal.value,
+                    threePercent: point3.value,
+                })
+            });
+            if (!response.ok) {
+                throw new Error("NetworkError");
+            }
+            const thePlayer = yield response.json();
+            playertoTable(thePlayer);
+            console.log(thePlayer);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    });
+}
+function playertoTable(Players) {
+    Players.forEach((Current, index) => {
+        const tableRow = document.createElement("tr");
+        const player = document.createElement("td");
+        const points = document.createElement("td");
+        const fg = document.createElement("td");
+        const threePercent = document.createElement("td");
+        const action = document.createElement("td");
+        const AddBtn = document.createElement("button");
+        AddBtn.textContent = `add ${Current.playerName} to Current Team`;
+        action.appendChild(AddBtn);
+        tableRow.appendChild(action);
+        table === null || table === void 0 ? void 0 : table.appendChild(tableRow);
+    });
+}
+// fetch(BASEURL, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       position: "PG",
+//       twoPercent: 10,
+//       threePercent: 0,
+//       points: 20,
+//     })
+//   })
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.error('Error:', error));
